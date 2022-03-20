@@ -1,0 +1,27 @@
+@use "./variable.module.scss" as var;
+
+.page {
+    text-align: center;
+    margin-top: 1rem;
+
+    .error-text {
+        font-size: 3rem;
+    }
+    .error404 {
+        font-size: 10rem;
+        text-shadow: 0.1rem 0.1rem 1rem rgba(var.$dark-color, 0.7);
+        margin:2rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .information {
+        p {
+            text-align: center;
+        }
+    }
+    .links {
+        margin: 1.5rem 0;
+    }
+}

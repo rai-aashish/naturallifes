@@ -1,0 +1,96 @@
+@use "../../styles/variable.module.scss" as var;
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: rgba(var.$dark-color, 0.7);
+    color: var.$white-color;
+    padding: 1rem 2rem;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 11rem;
+    transition: all 0.4s ease-in-out;
+
+    &.squeeze {
+        background-color: var.$primary-color;
+        border-bottom: 0.1rem solid rgba(var.$white-color, 0.3);
+        height: 5.8rem;
+
+        .logo_container .logo {
+            width: 8rem;
+            height: 5rem;
+        }
+    }
+
+    .logo_container {
+        .logo {
+            position: relative;
+            width: 15rem;
+            height: 10rem;
+            transition: all 0.4s ease-in-out;
+        }
+    }
+}
+
+//contact bar
+.contact-bar {
+    background-color: var.$primary-color;
+    color: var.$white-color;
+    text-shadow: 0.1rem 0.1rem 0.1rem var.$dark-color;
+    padding: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width:var.$sm) {
+        justify-content: center;
+    }
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            background-color: var.$tertiary-color;
+        }
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        li {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            svg {
+                width: 3rem;
+                height: 3rem;
+                path {
+                    fill: var.$white-color;
+                }
+            }
+        }
+    }
+    a {
+        padding: 1rem 0.5rem;
+    }
+
+
+}
+
+@media (max-width: var.$sm) {
+    .header .logo_container {
+        .logo {
+            width: 8rem;
+            height: 7rem;
+        }
+    }
+}

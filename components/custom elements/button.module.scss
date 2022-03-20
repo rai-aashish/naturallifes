@@ -1,0 +1,98 @@
+@use "../../styles/variable.module.scss" as var;
+
+.btn {
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 1rem;
+    margin:0 0.5rem;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0.5rem;
+    letter-spacing: 0.05rem;
+
+    &:hover {
+        background-color: var.$tertiary-color;
+        color: var.$white-color;
+    }
+
+    //styles modifiers
+    &--white-bg {
+        background-color: var.$white-color;
+        color: var.$dark-color;
+    }
+    &--primary-bg {
+        background-color: var.$primary-color;
+        color: var.$white-color;
+    }
+    &--tertiary-bg {
+        background-color: var.$tertiary-color;
+        color: var.$white-color;
+    }
+    &--grey-bg {
+        background-color: var.$grey-color;
+        color: var.$white-color;
+    }
+    &--success-bg {
+        background-color: var.$success;
+        color: var.$white-color;
+    }
+    &--danger-bg {
+        background-color: var.$danger;
+        color: var.$white-color;
+    }
+
+    //sizes modifiers
+    &--small {
+        padding: 0.5rem;
+    }
+
+    &--medium {
+        padding: 0.8rem 1rem;
+    }
+
+    &--xmedium {
+        padding: 1rem 4rem;     
+    }
+
+    &--large {
+        font-size: 2.5rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    &--xlarge {
+        font-size: 2.8rem;
+        padding: 1.1rem 1.8rem;
+    }
+
+
+        //special modifier
+        &--book-now {
+            background-color: var.$tertiary-color;
+            color: var.$white-color;
+            font-size: 1.4rem;
+            padding: 0.8rem 1.5rem;
+            overflow: hidden;
+            box-shadow: rgba(var.$dark-color,0.8) 0.2rem 0.4rem 0.3rem 0;
+
+            &::before{
+                position: absolute;
+                top:0;
+                left:0;
+                content:"";
+                width:3rem;
+                height: 5rem;
+                transform:translateX(-5rem);
+                background-color: rgba(var.$white-color,0.3);
+                transition: all 0.4s ease;
+
+            }
+
+            &:hover{
+                &::before{
+                    transform: rotateZ(-10deg)translateX(11rem);
+                }
+            }
+
+        }
+}

@@ -1,0 +1,99 @@
+@use "../../styles/variable.module.scss" as var;
+
+.mobile_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1rem;
+    flex-grow: 1;
+    
+    h1{
+        flex-grow: 1;
+        font-size: 2.5rem;
+        text-align: center;
+        transition: 0.3s ease-in-out;
+    }
+
+    
+    &__squeeze{
+        h1{
+            font-size: 1.7rem;
+        }
+    }
+
+    .hamburger {
+        max-width: 3.5rem;
+        min-width: 3.5rem;
+        height: 3.5rem;
+        cursor: pointer;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-height: 100vh;
+        background-color: var.$white-color;
+        background-image: linear-gradient(170deg, rgba(var.$white-color,0.7) 0%, rgba(var.$primary-color,1) 100%);
+        color: var.$dark-color;
+        z-index: 99;
+
+        .x_btn {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            cursor: pointer;
+        }
+
+
+        ul {
+            font-size: 1.8rem;
+            font-weight: 600;
+            width: max-content;
+            margin: auto;
+            max-height: 70vh;
+            overflow: auto;
+            margin-top: 10rem;
+            text-align: center;
+
+            li {
+                margin: 1.5rem;
+
+                a {
+                    position: relative;
+
+                    &:hover,
+                    &.active {
+                        &::before,
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 0.2rem;
+                        width: 0%;
+                        background-color: var.$dark-color;
+                        transition: width 0.3s;
+                    }
+
+                    &::before {
+                        top: -0.5rem;
+                        left: 0;
+                    }
+
+                    &::after {
+                        bottom: -0.5rem;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+}

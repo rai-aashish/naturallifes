@@ -1,0 +1,49 @@
+@use "../../styles/variable.module.scss" as var;
+
+.greetings{
+    background-color: var.$white-color;
+    text-align: center;
+    padding: 3rem 0rem;
+}
+.greeting-message {
+    text-align: center;
+    padding: 1rem;
+    flex-basis: 50%;
+    font-size: 1.4rem;
+    font-family: var.$desc-font;
+
+    @media (max-width: var.$sm) {
+        flex-grow: 1;
+    }
+
+    p {
+        text-align: justify;
+    }
+
+    ul {
+        margin-top: 1rem;
+        font-weight: 700;
+        text-align: left;
+
+        li {
+            margin: 0.1rem 0;
+
+            a:hover{
+                color: var.$primary-color;
+            }
+        }
+    }
+}
+
+.greeting-flex {
+    padding: 1.5rem 0;
+
+
+}
+.image-container {
+    width: 30rem;
+    height: 31rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    position: relative;
+}

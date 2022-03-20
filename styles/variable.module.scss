@@ -1,0 +1,44 @@
+/* variables.module.scss */
+
+
+/* color palatte*/
+$primary-color: #01cc96;
+$secondary-color:#1b9aaa;
+$tertiary-color:#f18d20;
+$white-color:#fefff5;
+$dark-color:#3d3d3d;
+$dark-color--lighten:#757575;
+$silver-color:#e4e4e4;
+$grey-color:rgb(175, 175, 175);
+
+/* notification colors*/
+$danger:rgb(235, 44, 19);
+$success:rgb(12, 148, 12);
+$warning:#da780f;
+$info:#074096;;
+
+//placeholders;
+$image-placeholder:linear-gradient(342deg, #607c75c9 0%, #f8fadc 51%, #607c75c9 100%);
+
+//font families
+$desc-font: "Varela Round", sans-serif;
+
+///breakpoints
+$sm:700px;
+$md:900px;
+$lg:1100px;
+
+
+:export {
+  //colors
+  primaryColor: $primary-color;
+  secondaryColor:$secondary-color;
+  tertiaryColor:$tertiary-color;
+
+  //breakpoints
+  sm:$sm;
+  md:$md;
+  lg:$lg;
+  
+
+}

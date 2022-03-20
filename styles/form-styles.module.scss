@@ -1,0 +1,81 @@
+@use "../styles/variable.module.scss" as var;
+
+.form-container {
+    max-width: 90rem;
+    margin: auto;
+    padding: 0 1rem;
+    text-align: center;
+
+    .form-details {
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 1.5rem;
+    }
+}
+
+.form {
+    text-align: center;
+    font-size: 1.4rem;
+
+    .form-field {
+        margin: auto;
+        margin-bottom: 1rem;
+
+        @media (min-width: var.$sm) {
+            width: 80%;
+        }
+
+        &.error {
+            color: var.$danger;
+
+            input,
+            select,
+            textarea {
+                border-color: var.$danger;
+            }
+        }
+
+        label {
+            display: block;
+            margin: 0.5rem 0;
+            text-align: left;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+
+            &.error-field {
+                border-color: var.$danger;
+            }
+        }
+
+        textarea {
+            height: 20rem;
+        }
+
+        small {
+            padding: 0.5rem;
+            text-align: left;
+            color: var.$danger;
+        }
+    }
+
+    button {
+        margin: auto;
+        box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(var.$dark-color, 0.5);
+    }
+}
+
+.form-submit-status {
+    padding: 1rem;
+    background-color: var.$white-color;
+    border-radius: 1rem;
+    text-align: center;
+
+    p {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}

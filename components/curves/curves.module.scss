@@ -1,0 +1,33 @@
+@use "../../styles/variable.module.scss" as var;
+
+.curve-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+
+    svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1rem);
+        height: 7.8rem;
+
+        .white-color {
+            fill: var.$white-color;
+        }
+
+        .primary-color {
+            fill: var.$primary-color;
+        }
+
+        .tertiary-color {
+            fill: var.$tertiary-color;
+        }
+
+        .dark-color {
+            fill: var.$dark-color;
+        }
+    }
+}

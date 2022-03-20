@@ -1,0 +1,78 @@
+@use "../../styles/variable.module.scss" as var;
+
+.customer-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 90rem;
+    margin: auto auto 5rem auto;
+
+    &__comment {
+        flex-basis: 80%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #e2e2e257;
+        min-height: 15rem;
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+        font-size: "Varela Round", sans-serif;
+        clip-path: polygon(0 100%, 0 1%, 94% 0, 94% 56%, 100% 53%, 94% 78%, 94% 100%);
+
+        p {
+            padding: 1rem;
+            font-size: 1.6rem;
+            margin-right: 7%;
+            overflow: hidden;
+
+            small{
+                margin-top: 0.8rem;
+                text-align: right;
+                display: block;
+            }
+        }
+
+
+    }
+
+    &__image-container {
+        position: relative;
+        width: 22.5rem;
+        height: 22rem;
+        padding: 0.5rem;
+        border-radius: 1.5rem;
+        background-color: var.$white-color;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: var.$sm) {
+    .customer-card {
+        flex-direction: column-reverse;
+
+        &__comment {
+            clip-path: polygon(0 100%, 0 20%, 51% 20%, 50% 0, 58% 20%, 100% 20%, 100% 100%);
+            padding-top: 3rem;
+            width: 90%;
+            margin: auto;
+            border-bottom-right-radius: 1.5rem;
+
+            p{
+                margin-right: 0;
+                margin-top: 4%;
+            }
+        }
+        &__image-container {
+            width: 85%;
+            max-width: 25rem;
+            max-height: 25rem;
+            margin: auto;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

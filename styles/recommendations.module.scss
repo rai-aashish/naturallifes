@@ -1,0 +1,13 @@
+@use '../styles/variable.module.scss' as var;
+
+.recommendation-card{
+    border:1.8rem solid var.$secondary-color;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem rgba(var.$dark-color,0.7) ;
+
+
+    &__image-container{
+        width:30rem;
+        height: 45rem;
+        position: relative;
+    }
+}

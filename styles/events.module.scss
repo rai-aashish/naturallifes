@@ -1,0 +1,121 @@
+@use "./variable.module.scss" as var;
+
+.wrapper {
+    margin: 1rem;
+
+    .timeline-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+
+        div.event-container {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .event {
+                max-width: 60rem;
+                box-shadow: 0 0.2rem 2rem 0 rgba(var.$dark-color--lighten, 0.7);
+                h2 {
+                    padding: 2rem;
+                    text-align: center;
+                    color: var.$white-color;
+                }
+                ul {
+                    margin-left: 2rem;
+                    padding: 1rem 0;
+                    list-style: none;
+
+                    li {
+                        position: relative;
+                        padding-left: 1rem;
+                        margin: 1rem 0;
+                        &::before {
+                            content: "";
+                            background-color: var.$dark-color--lighten;
+                            width: 1rem;
+                            height: 0.3rem;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: -1rem;
+                        }
+                    }
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 50%;
+                    box-shadow: 0 0.2rem 2rem 0 rgba(var.$dark-color--lighten, 0.7);
+                }
+            }
+        }
+        &:nth-child(odd) div.event-container {
+            grid-area: 1 / 1 / 2 / 2;
+            border-right: 1rem solid var.$dark-color--lighten;
+            margin-right: -0.5rem;
+
+            .event {
+                margin-right: 2rem;
+                h2 {
+                    background-color: var.$primary-color;
+                }
+
+                &::after{
+                    background-color: var.$primary-color;
+                    right:-1.5rem;
+                }
+            }
+        }
+
+        &:nth-child(even) div.event-container {
+            grid-area: 1 / 2 / 2 / 3;
+            border-left: 1rem solid var.$dark-color--lighten;
+            margin-left: -0.5rem;
+
+            .event {
+                margin-left: 2rem;
+                h2 {
+                    background-color: var.$secondary-color;
+                }
+
+                &::after{
+                    background-color: var.$secondary-color;
+                    left:-1.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: var.$sm) {
+    .wrapper .timeline-card {
+        display: block;
+
+        &:nth-child(odd) div.event-container,
+        &:nth-child(even) div.event-container {
+            border-right: none;
+            border-left: 1rem solid var.$dark-color;
+            margin: 0rem;
+
+            .event {
+                margin-left: 2rem;
+                margin-right: 0;
+
+                &::after{
+                    right:unset;
+                    left:-1.5rem
+                }
+            }
+        }
+    }
+}

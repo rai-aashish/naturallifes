@@ -1,0 +1,14 @@
+@use "../../styles/variable.module.scss" as var;
+
+.serving__text{
+    text-align: center;
+    font-size: 4rem;
+}
+
+.serving__years-no{
+    text-align: center;
+    font-size: 8rem;
+    font-weight: bold;
+    text-shadow: #969696 0.2rem 0.5rem 0;
+    margin:2rem 0;
+}

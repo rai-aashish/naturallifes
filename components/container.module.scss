@@ -1,0 +1,41 @@
+@use "../styles/variable.module.scss" as var;
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    margin: 1rem;
+    overflow: hidden;
+
+    &.justify-content--space-evenly {
+        justify-content: space-evenly;
+    }
+    &.justify-content--center {
+        justify-content: center;
+    }
+    &.justify-content--space-between {
+        justify-content: space-between;
+    }
+    &.justify-content--flex-start {
+        justify-content: flex-start;
+    }
+    &.justify-content--flex-end {
+        justify-content: flex-end;
+    }
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(var.$dark-color, 0.9);
+    z-index: 200;
+}

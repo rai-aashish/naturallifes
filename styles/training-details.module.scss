@@ -1,0 +1,122 @@
+@use "../styles/variable.module.scss" as var;
+
+//menubar
+.menu-bar {
+  background-color: var.$primary-color;
+  color: var.$white-color;
+  padding: 1rem;
+
+  a {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    transition: all 0.4s ease-in-out;
+
+    &:hover {
+      background-color: rgba(var.$white-color, 0.5);
+      color: var.$dark-color;
+    }
+  }
+}
+
+//wrapper for main content from database
+.wrapper {
+  padding: 0 1rem;
+  max-width: 90rem;
+  margin: auto;
+  background-color: var.$white-color;
+
+  .cover-image-container {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    margin: auto;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+    overflow: hidden;
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 10;
+      background-color: rgba(var.$dark-color, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      & > h1 {
+        margin: 1rem 0;
+        text-align: center;
+        font-size: 3.5rem;
+        text-shadow: 0.3rem 0.4rem 0rem rgba(var.$dark-color, 0.9);
+        color: var.$primary-color;
+      }
+      & > p {
+        padding: 0.5rem 1rem;
+        background-color: rgba(var.$dark-color, 0.9);
+        border-radius: 1rem;
+        color: var.$grey-color;
+      }
+    }
+
+    .enroll-btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem;
+      z-index: 11;
+      display: flex;
+      flex-wrap: wrap;
+
+      p {
+        padding: 0.1rem 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(var.$white-color, 0.8);
+        border-radius: 1rem;
+        font-weight: bold;
+        box-shadow: 0.1rem 0.1rem 1rem rgba(var.$dark-color, 0.7);
+
+        span {
+          &.discount {
+            color: var.$danger;
+          }
+        }
+      }
+    }
+  }
+
+  //styles for contents from db
+  main {
+    padding: 1rem 0;
+    ul,
+    ol {
+      padding-left: 1rem;
+    }
+
+    ol {
+      li {
+        list-style-type: disc;
+      }
+    }
+
+    p,
+    h1,
+    h2,
+    h3,
+    ul {
+      margin: 1rem 0;
+    }
+  }
+
+  .emphasize-enroll {
+    margin: 1rem 0;
+    font-weight: bold;
+  }
+}

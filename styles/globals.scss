@@ -1,0 +1,236 @@
+@use "./variable.module.scss" as var;
+
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media (min-width: 1400px) {
+  html {
+    font-size: 67%;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  position: relative;
+  color: #3d3d3d;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 1.2rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0.6rem rgba(102, 101, 101, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  text-align: justify;
+}
+
+input,
+textarea,
+select {
+  outline: none;
+  background-color: rgba(var.$silver-color, 0.8);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  border: 0.1rem solid var.$grey-color;
+  color: var.$dark-color--lighten;
+
+  &:hover,
+  &:focus {
+    border-color: var.$primary-color;
+  }
+}
+//styles
+
+.page-section {
+  position: relative;
+  padding: 2rem 1rem 5rem 1rem;
+  align-items: center;
+  color: var.$dark-color;
+
+  h1.page-section-title {
+    text-align: center;
+    font-size: 3.8rem;
+    margin: 2rem 0 4rem 0;
+    text-shadow: #636363 0.1rem 0.1rem 0.2rem;
+  }
+
+  //modifiers
+  &--primary-background {
+    background-color: var.$primary-color;
+    color: var.$white-color;
+  }
+
+  &--white-background {
+    background-color: var.$white-color;
+  }
+
+  &--secondary-background {
+    background-color: var.$secondary-color;
+    color: var.$white-color;
+  }
+
+  &--tertiary-background {
+    background-color: var.$tertiary-color;
+    color: var.$white-color;
+  }
+}
+
+//helpers
+//color variations
+.primary-color {
+  color: var.$primary-color;
+}
+
+.secondary-color {
+  color: var.$secondary-color;
+}
+
+.dark-color {
+  color: var.$dark-color;
+}
+.tertiary-color {
+  color: var.$tertiary-color;
+}
+
+.red-color {
+  color: var.$danger;
+}
+
+.green-color {
+  color: var.$success;
+}
+
+//aligns & decorations
+
+.display-block {
+  display: block;
+}
+
+.margin-auto {
+  margin: auto;
+}
+.text-center {
+  text-align: center;
+}
+.text-striked {
+  text-decoration: line-through;
+}
+.padding-block {
+  padding: 2rem 1rem;
+}
+//page styles
+
+.page {
+  min-height: 50vh;
+  padding-bottom: 2rem;
+  background-color: var.$white-color;
+
+  h1.page__title {
+    text-align: center;
+    font-size: 4rem;
+    text-shadow: 0.1rem 0.1rem 0rem var.$silver-color;
+    padding: 1rem 0;
+  }
+}
+
+//forms
+
+.form-container {
+  max-width: 90rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+form {
+  text-align: center;
+  font-size: 1.4rem;
+
+  .form-field {
+    margin: auto;
+    margin-bottom: 1rem;
+
+    @media (min-width: var.$sm) {
+      width: 80%;
+    }
+
+    &.error {
+      color: var.$danger;
+
+      input,
+      select,
+      textarea {
+        border-color: var.$danger;
+      }
+    }
+
+    label {
+      display: block;
+      margin: 0.5rem 0;
+      text-align: left;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+
+      &.error-field {
+        border-color: var.$danger;
+      }
+    }
+
+    textarea {
+      height: 20rem;
+    }
+
+    small {
+      padding: 0.5rem;
+      text-align: left;
+      color: var.$danger;
+    }
+  }
+
+  button {
+    margin: auto;
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(var.$dark-color, 0.5);
+  }
+}
+
+/* hide number arrows*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

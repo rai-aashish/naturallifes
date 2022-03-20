@@ -1,0 +1,27 @@
+@use "../../styles/variable.module.scss" as var;
+
+.msg-block {
+    padding: 1rem 2rem;
+    color: var.$dark-color--lighten;
+    margin: 0.5rem 0;
+    font-family: var.$desc-font;
+
+    p {
+        text-align: center;
+    }
+    .error {
+        color: var.$danger;
+    }
+
+    .info {
+        color: var.$info;
+    }
+
+    .warn {
+        color: var.$warning;
+    }
+
+    .success {
+        color: var.$success;
+    }
+}

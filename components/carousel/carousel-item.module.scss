@@ -1,0 +1,22 @@
+@use "../../styles/variable.module.scss" as var;
+
+.carousel-item {
+    height: 45rem;
+    position: relative;
+
+    .legend {
+        background-color: rgba(var.$dark-color, 0.7);
+        color: var.$white-color;
+        width: 100%;
+        padding: 1rem;
+        transition: all 0.5s ease-in-out;
+        font-size: 1.7rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        &.change-bg {
+            background-color: rgba(var.$primary-color, 0.7);
+        }
+    }
+}

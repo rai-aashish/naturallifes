@@ -1,0 +1,90 @@
+@use "../../styles/variable.module.scss" as var;
+
+.training-description {
+    flex-basis: 49%;
+    flex-grow: 1;
+    text-align: center;
+
+    button {
+        margin: 3rem auto;
+        position: relative;
+        box-shadow: 0.1rem 0.1rem 1rem rgba(58, 58, 58, 0.8);
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 0.8rem;
+            border: 0.2rem solid #f8ffe5;
+            width: 100%;
+            height: 100%;
+            animation: enroll__now__border__ani 1.5s linear infinite;
+        }
+
+        &:hover {
+            &::after {
+                border-color: var.$tertiary-color;
+            }
+        }
+    }
+}
+
+.training-images {
+    margin: 1rem;
+    gap:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        position: relative;
+        background-color: var.$white-color;
+        padding: 0.5rem;
+        border-radius: 0.8rem;
+        width: 25rem;
+        margin: 0rem 1rem;
+        box-shadow: 0.1rem 0.1rem 1rem rgba(58, 58, 58, 0.8);
+
+        img {
+            border-top-left-radius: 0.8rem;
+            border-top-right-radius: 0.8rem;
+            height: 20rem;
+        }
+
+        &:nth-child(1) {
+            margin-bottom: 8rem;
+        }
+
+        p {
+            margin-top: 0.4rem;
+            text-align: center;
+            color:var.$dark-color;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    }
+
+    @media (max-width: var.$sm) {
+        display: block;
+
+        &__container:nth-child(1) {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+//animations
+@keyframes enroll__now__ani {
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes enroll__now__border__ani {
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}

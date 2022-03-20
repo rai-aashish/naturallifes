@@ -1,0 +1,102 @@
+@use "../styles/variable.module.scss" as var;
+
+.options-bar {
+    background-color: rgba(var.$dark-color, 0.6);
+    color: var.$white-color;
+    display: flex;
+    height: 6rem;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+
+    &.squeeze {
+        background-color: var.$primary-color;
+    }
+
+    span {
+        letter-spacing: 0.05rem;
+        font-size: 1.5rem;
+        margin: 0 1rem;
+        height: 6rem;
+        line-height: 6rem;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        button {
+            margin: 0 0.5rem;
+            padding: 1rem 2rem 0.5rem 2rem;
+            background-color: transparent;
+            border: none;
+            color: var.$white-color;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+            text-transform: capitalize;
+
+            &:hover {
+                background-color: rgba(var.$white-color, 0.4);
+            }
+
+            &.active {
+                background-color: var.$white-color;
+                color: var.$dark-color;
+            }
+        }
+    }
+}
+.training-card {
+    width: 30rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    margin: 1rem;
+    box-shadow: 0 0.1rem 1rem 0.2rem rgba(var.$dark-color, 0.3);
+
+    .cover-image {
+        width: 30rem;
+        height: 20rem;
+        position: relative;
+        background-color: var.$primary-color;
+    }
+    .training-card__body {
+        padding: 1rem;
+        h3 {
+            margin: 0.5rem;
+            height: 4rem;
+            overflow: hidden;
+            text-align: center;
+        }
+        .training-category {
+            text-align: right;
+            span {
+                padding: 0.2rem 1rem;
+                display: inline-block;
+                background-color: var.$grey-color;
+                border-radius: 3rem;
+                color: var.$white-color;
+                text-transform: uppercase;
+            }
+        }
+        p {
+            text-align: justify;
+            height: 6rem;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0.1rem 1rem 0.8rem rgba(var.$primary-color, 0.5);
+    }
+}

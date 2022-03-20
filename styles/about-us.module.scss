@@ -1,0 +1,135 @@
+@use "./variable.module.scss" as var;
+
+.block {
+    margin: 1rem 0 3rem 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    .col-1 {
+        flex-basis: 49%;
+        flex-grow: 0.9;
+        padding: 1rem;
+
+        .quote {
+            position: relative;
+            &::before,
+            &::after {
+                content: '"';
+                font-size: 5rem;
+                font-weight: bold;
+                color: grey;
+                position: absolute;
+            }
+
+            &::before {
+                top: -2rem;
+                left: -2rem;
+            }
+
+            &::after {
+                bottom: -4rem;
+                right: -2rem;
+            }
+        }
+    }
+
+    .col-2 {
+        .designation {
+            ul {
+                text-align: left;
+            }
+        }
+    }
+
+    //ordering
+    &:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+}
+
+.image-container {
+    position: relative;
+    flex-basis: 40%;
+    width: 50rem;
+    margin: 0 1rem;
+    max-width: 70rem;
+    flex-grow: 1;
+    height: 35rem;
+    background: var.$image-placeholder;
+
+    @media (max-width: var.$sm) {
+        width: 95vw;
+    }
+
+    &--chairman {
+        background: none;
+        width: 55rem;
+        height: 35rem;
+        @media (max-width: var.$sm) {
+            width: 95vw;
+        }
+    }
+}
+
+.speciality-list {
+    flex-basis: 50rem;
+    font-family: var.$desc-font;
+
+    &__item {
+        background-color: rgba(var.$silver-color, 0.2);
+        display: flex;
+        border-bottom: 0.1rem solid rgba(var.$silver-color, 0.6);
+        border-left: 0.1rem solid rgba(var.$silver-color, 0.6);
+
+        &:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        div {
+            padding: 1.5rem;
+        }
+
+        div:nth-child(1) {
+            flex-basis: 5rem;
+            font-size: 5rem;
+            text-align: center;
+            color: var.$dark-color--lighten;
+            font-weight: bold;
+        }
+
+        div:nth-child(2) {
+            h2 {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+.member-card {
+    background-color: var.$white-color;
+    padding: 0.5rem;
+    height: 33rem;
+    color: var.$dark-color;
+    text-align: center;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0.1rem 1rem 0rem rgba(var.$dark-color, 0.6);
+
+    .member-image {
+        position: relative;
+        width: 26rem;
+        height: 26rem;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        color: var.$dark-color--lighten;
+        margin: 0.2rem 0;
+        max-width: 26rem;
+        font-size: 0.9em;
+    }
+}

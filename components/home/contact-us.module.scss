@@ -1,0 +1,120 @@
+@use "../../styles/variable.module.scss" as var;
+
+.svg-container {
+    flex-basis: 49%;
+    max-width: 50rem;
+    min-width: 40rem;
+}
+
+.form-container {
+    flex-basis: 49%;
+    max-width: 55rem;
+
+    form {
+        text-align: center;
+        font-size: 1.4rem;
+
+        .form-field {
+            width: 80%;
+            margin: auto;
+            margin-bottom: 1rem;
+
+            &.error {
+                color: var.$danger;
+
+                input,
+                select,
+                textarea {
+                    border-color: var.$danger;
+                    color: var.$danger;
+                }
+            }
+
+            label {
+                display: block;
+                margin: 0.5rem 0;
+                text-align: left;
+            }
+
+            input,
+            textarea {
+                width: 100%;
+            }
+
+            textarea {
+                height: 20rem;
+            }
+
+            small {
+                padding: 0.5rem;
+                color: var.$danger;
+            }
+        }
+
+        button {
+            margin: auto;
+            box-shadow: 0.1rem 0.1rem 0.5rem 0 rgba(var.$dark-color, 0.5);
+        }
+    }
+
+    .status-message {
+        margin:1.5rem;
+        background-color: var.$white-color;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        text-align: center;
+
+        p{
+            margin-bottom: 1.5rem;
+        }
+
+    }
+}
+
+@media (max-width: var.$sm) {
+    .svg-container {
+        flex-grow: 1;
+        max-width: 35rem;
+    }
+
+    .form-container {
+        flex-grow: 1;
+    }
+}
+
+//svg fills
+.st0 {
+    fill: #f0f0f0;
+}
+
+.st1 {
+    fill: #ffffff;
+}
+
+.st2 {
+    fill: #ffb6b6;
+}
+
+.st3 {
+    fill: #3f3d56;
+}
+
+.st4 {
+    fill: #2f2e41;
+}
+
+.st5 {
+    fill: #ffb7b7;
+}
+
+.st6 {
+    fill: #e4e4e4;
+}
+
+.st7 {
+    fill: #cacaca;
+}
+
+.st8 {
+    fill: #01cc96;
+}
